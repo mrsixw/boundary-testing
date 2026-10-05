@@ -1,0 +1,6 @@
+interface:
+  display_name: "Boundary Testing"
+  short_description: "Test components at their boundary, fake what lies beyond"
+  default_prompt: "Use $boundary-testing to write or review these tests."
+policy:
+  allow_implicit_invocation: true
