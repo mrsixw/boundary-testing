@@ -102,6 +102,11 @@ the diff.
 - Is a complex algorithm tested directly with its edge cases, and is its wiring
   covered at the boundary too?
 - Do any of the anti-patterns above appear in the changed tests?
+- Are exit codes, HTTP statuses or other contract values asserted as bare
+  numbers when the code under test names them? Assert against the named
+  constant, so a renumbering cannot leave the test checking a stale value. If
+  the number itself is a public contract that outside callers rely on, pin it
+  once in a dedicated test and use the name everywhere else.
 
 When a test is at the wrong level, suggest the boundary test that would replace
 it, not only the problem.
